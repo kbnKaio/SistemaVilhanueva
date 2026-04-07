@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author u08016696180
@@ -37,23 +39,22 @@ public class JDlgMpvUsuarios extends javax.swing.JDialog {
         jBtnAlterar.setEnabled(true);
     }
 
-    public void habilitar() {
-        jBtnConfirmar.setEnabled(true);
-        jTxtCodigo.setEnabled(true);
-        jCboNivel.setEnabled(true);
-        jTxtApelido.setEnabled(true);
-        jTxtNome.setEnabled(true);
-        jFmtCPF.setEnabled(true);
-        jFmtDataNascimento.setEnabled(true);
-        jPwfSenha.setEnabled(true);
-        jChbAtivo.setEnabled(true);
+    public void habilitar(boolean valor) {
+        jBtnConfirmar.setEnabled(valor);
+        jTxtCodigo.setEnabled(valor);
+        jTxtApelido.setEnabled(valor);
+        jTxtNome.setEnabled(valor);
+        jFmtCPF.setEnabled(valor);
+        jFmtDataNascimento.setEnabled(valor);
+        jPwfSenha.setEnabled(valor);
+        jChbAtivo.setEnabled(valor);
 
-        jBtnExcluir.setEnabled(true);
-        jBtnCancelar.setEnabled(true);
-        jBtnConfirmar.setEnabled(true);
-        jBtnIncluir.setEnabled(true);
-        jBtnPesquisar.setEnabled(true);
-        jBtnAlterar.setEnabled(true);
+        jBtnExcluir.setEnabled(!valor);
+        jBtnCancelar.setEnabled(valor);
+        jBtnConfirmar.setEnabled(valor);
+        jBtnIncluir.setEnabled(!valor);
+        jBtnPesquisar.setEnabled(!valor);
+        jBtnAlterar.setEnabled(!valor);
 
     }
 
@@ -140,9 +141,19 @@ public class JDlgMpvUsuarios extends javax.swing.JDialog {
 
         jBtnAlterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/alterar.png"))); // NOI18N
         jBtnAlterar.setText("Alterar");
+        jBtnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnAlterarActionPerformed(evt);
+            }
+        });
 
         jBtnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Excluir.png"))); // NOI18N
         jBtnExcluir.setText("Excluir");
+        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnExcluirActionPerformed(evt);
+            }
+        });
 
         jBtnConfirmar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/confirmar.png"))); // NOI18N
         jBtnConfirmar.setText("Confirmar");
@@ -162,6 +173,11 @@ public class JDlgMpvUsuarios extends javax.swing.JDialog {
 
         jBtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/pesquisar.png"))); // NOI18N
         jBtnPesquisar.setText("Pesquisar");
+        jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnPesquisarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -251,9 +267,9 @@ public class JDlgMpvUsuarios extends javax.swing.JDialog {
                     .addComponent(jTxtApelido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFmtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jFmtDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -279,7 +295,7 @@ public class JDlgMpvUsuarios extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnIncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirActionPerformed
-        habilitar();  // TODO add your handling code here:jBtnCancelar.setEnabled(false);
+        habilitar(true);  // TODO add your handling code here:jBtnCancelar.setEnabled(false);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnIncluirActionPerformed
@@ -292,6 +308,22 @@ public class JDlgMpvUsuarios extends javax.swing.JDialog {
     private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
         desabilitar();        // TODO add your handling code here:
     }//GEN-LAST:event_jBtnConfirmarActionPerformed
+
+    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showConfirmDialog(null, "Comfirma Exclusão",
+                "Selecione uma opção", JOptionPane.YES_NO_OPTION);
+    }//GEN-LAST:event_jBtnExcluirActionPerformed
+
+    private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showInputDialog(null, "Entre com chave primaria");
+    }//GEN-LAST:event_jBtnPesquisarActionPerformed
+
+    private void jBtnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarActionPerformed
+        // TODO add your handling code here:
+        habilitar(true);
+    }//GEN-LAST:event_jBtnAlterarActionPerformed
 
     /**
      * @param args the command line arguments
