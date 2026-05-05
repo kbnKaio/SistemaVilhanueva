@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/u08016696180/Documents/NetBeansProjects/Sistema_Nunes/src/view/JFrmTeste.java</file>
+            <file>file:/C:/Users/u08016696180/Documents/NetBeansProjects/Sistema_Nunes/src/view/JDlgMpvUsuarios.java</file>
+            <file>file:/C:/Users/u08016696180/Documents/NetBeansProjects/Sistema_Nunes/src/bean/MpvUsuarios.java</file>
+            <file>file:/C:/Users/u08016696180/Documents/NetBeansProjects/Sistema_Nunes/src/testes/JdbcSelect.java</file>
+            <file>file:/C:/Users/u08016696180/Documents/NetBeansProjects/Sistema_Nunes/src/testes/JdbcCrud.java</file>
+            <file>file:/C:/Users/u08016696180/Documents/NetBeansProjects/Sistema_Nunes/src/dao/DaoMpvUsuarios.java</file>
         </group>
     </open-files>
 </project-private>
